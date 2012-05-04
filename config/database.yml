@@ -15,7 +15,7 @@ development:
   database: SoftiSivut_development
   pool: 5
   username: root
-  password:
+  password: Tvaini0
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: SoftiSivut_test
   pool: 5
   username: root
-  password:
+  password: Tvaini0
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -38,5 +38,5 @@ production:
   database: SoftiSivut_production
   pool: 5
   username: root
-  password:
+  password: Tvaini0
   socket: /var/run/mysqld/mysqld.sock
