@@ -1,0 +1,35 @@
+<div class="span4">
+	<ul class="nav nav-list">
+	  <h3>Kamaa</h3>
+	  <li>
+	    <a href="/saannot/1">
+	      <i class="icon-info-sign"></i>
+	      Yleiset jarjestyssaannot
+	    </a>
+	  </li>
+	  <li>
+	    <a href="/saannot/2">
+	      <i class="icon-info-sign"></i>
+	      Pelisaannot
+	    </a>
+	  </li>
+	</ul>
+</div>
+
+<div class="span8">
+	<h2><%= @title %></h2>
+	<div>
+		<% if params[:id].nil? %>
+			Semmossii ihme saantoi
+		<% else %>
+			<% case params[:id].to_i %>
+				<% when 1 then %>
+					<%= render "jarjestys" %>
+				<% when 2 then %>
+					<%= render "peli" %>
+				<% when 3 then %>
+					<%= render "muita"%>
+			<% end %>
+		<% end %>
+	</div>
+</div>
