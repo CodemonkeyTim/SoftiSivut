@@ -12,3 +12,20 @@
  *= require_tree .
  *= twitter/bootstrap .
 */
+
+
+.uutinen_dates {
+	font-weight: bold;
+}
+
+.notice {
+	border: solid 1px black;
+	padding: 10px;
+}
+
+
+.alert {
+	border: solid 1px black;
+	padding: 10px;
+}
+

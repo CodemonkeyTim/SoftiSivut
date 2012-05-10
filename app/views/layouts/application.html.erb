@@ -30,14 +30,32 @@
             <li><%= link_to "Forum", "/foorumi" %></li>
           </ul>
         </div>
+        <div class="pull-right">
+        	<ul class="nav">
+  				<li class="divider-vertical"></li>
+  				<% if current_user.nil? %>
+  					<li><%= link_to "Logaa inee", new_user_session_path %></li>
+  				<% else %>
+  					<li>Moi <%= current_user.username %>. <span><%= link_to "Kirjaudu ulos", destroy_user_session_path, :method => "delete" %></span></li>
+  				<% end %>
+  				
+			</ul>
+        </div>
       </div>
     </div>
   </div>
 
 <div class="container">
+	<% if notice %>
+		<div class="row notice"><%= notice %></div>
+	<% end %>
+	
+	<% if alert %>
+		<div class="row alert"><%= alert %></div>
+	<% end %>
+	
 	<div class="row">
 		<%= yield %>
-		</div>
 	</div>
 </div>
 
