@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="/private_pages/">Hallintapaneeli</a>
+        <a class="brand" href="/private_koti/">Hallintapaneeli</a>
         <div class="nav-collapse">
           <ul class="nav">
             <li><%= link_to "Koti", "/private_koti" %></li>
@@ -30,10 +30,11 @@
         </div>
         <div class="pull-right">
         	<ul class="nav">
-  				<li class="divider-vertical"></li>
   				<% if current_user.nil? %>
   					<li><%= link_to "Logaa inee", new_user_session_path %></li>
   				<% else %>
+  					<li><a href="/">Normisivusto</a></li>
+  					<li class="divider-vertical"></li>
   					<li>Moi <%= current_user.username %>. <span><%= link_to "Kirjaudu ulos", destroy_user_session_path, :method => "delete" %></span></li>
   				<% end %>
 			</ul>

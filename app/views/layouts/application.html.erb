@@ -30,10 +30,11 @@
         </div>
         <div class="pull-right">
         	<ul class="nav">
-  				<li class="divider-vertical"></li>
   				<% if current_user.nil? %>
   					<li><%= link_to "Logaa inee", new_user_session_path %></li>
   				<% else %>
+  					<li><a href="/private_koti">Hallintapaneeli</a></li>
+  					<li class="divider-vertical"></li>
   					<li>Moi <%= current_user.username %>. <span><%= link_to "Kirjaudu ulos", destroy_user_session_path, :method => "delete" %></span></li>
   				<% end %>
   				

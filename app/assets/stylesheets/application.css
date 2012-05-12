@@ -19,5 +19,6 @@
 }
 
 body {
-	background-image: url('/neukut.jpg');
+	background-image: url('neukut.jpg');
+	background-size: cover;
 }
