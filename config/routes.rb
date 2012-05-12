@@ -1,4 +1,12 @@
 SoftiSivut::Application.routes.draw do
+  get "private_pages/index"
+
+  get "private_pages/manage_uutiset"
+
+  get "private_pages/manage_pelit"
+
+  get "private_pages/manage_galleria"
+
   devise_for :users
 
   match "/koti" => "public_pages#index"
