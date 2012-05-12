@@ -35,7 +35,6 @@ body {
 
 .kamat {
 	background-color: white;
+	border: 15px solid white;
 	border-radius: 15px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
