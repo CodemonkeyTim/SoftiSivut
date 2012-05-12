@@ -18,13 +18,6 @@
 	font-weight: bold;
 }
 
-.notice {
-	border: solid 1px black;
-	padding: 10px;
-}
-
-
-.alert {
-	border: solid 1px black;
-	padding: 10px;
+body {
+	background-image: url('/neukut.jpg');
 }
