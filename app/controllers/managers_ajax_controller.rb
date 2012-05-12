@@ -1,6 +1,6 @@
 class ManagersAjaxController < ApplicationController
   before_filter :authenticate_user!
-  render :layout => false
+  #render :layout => false
   
   def new_uutinen
     uutinen = Uutinen.new(content: params[:content])
@@ -10,8 +10,6 @@ class ManagersAjaxController < ApplicationController
     else
       render :text => "200"
     end
-    
-    render :text => "Kakkaa"
   end
   
   def edit_uutinen

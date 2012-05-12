@@ -1,2 +1,63 @@
-<h1>PrivatePages#manage_uutiset</h1>
-<p>Find me in app/views/private_pages/manage_uutiset.html.erb</p>
+<div class="row">
+	<div class="span4">
+		<h3>Lisää uutinen:</h3>
+	</div>
+	<div class="span4">
+		<h3>Muokkaa uutista:</h3>
+		
+	</div>
+	<div class="span4">
+		
+	</div>
+</div>
+
+<div class="row">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Päiväys</th>
+				<th>Sisältö</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% unless @uutiset.nil? %>
+				<% @uutiset.each do |uutinen| %>
+					<tr uutinen_id="<%= uutinen.id %>">
+						<td><%= uutinen.created_at.strftime("%d.%m.%Y")%></td>
+						<td><%= escape_javascript(uutinen.content) %></td>
+						<td><input type="button" class="btn pull-right" value="Muokkaa" onclick="muokkaa_uutista(<%= uutinen.id %>)"></td>
+					</tr>
+				<% end %>
+			<% else %>
+				<tr>
+					<td>Tietokanta</td>
+					<td>tyhjä.</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	
+
+	
+	
+	
+</div>
+
+<script>		
+	function muokkaa_uutista(id) {
+		var uutinen = $('tr[uutinen_id="' + id + '"]');
+		uutinen.fadeOut();
+		
+		var uutinen_date = uutinen.children().first().html();
+		var uutinen_content = uutinen.children().first().next().html();
+		
+		var edit_uutinen_html = '<tr muokattava_uutinen_id="' + id + '">' + '<td><input type="text" value="' + uutinen_date + '" /></td>' + '<td><input type="text" value="' + uutinen_content + '" /></td>' + '<td><input type="button" value="Tallenna" onclick="tallenna_uutinen(id)" class="btn pull-right" /></td>' + '</tr>';
+		
+		uutinen.after(edit_uutinen_html);
+		
+		var muokattava_uutinen = $('tr[muokattava_uutinen_id="' + id + '"]');
+		muokattava_uutinen.find('input').first().datepicker();
+		
+	}
+	
+</script>

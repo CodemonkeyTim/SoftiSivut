@@ -6,7 +6,7 @@ class PrivatePagesController < ApplicationController
   end
 
   def manage_uutiset
-    
+    @uutiset = Uutinen.all
   end
 
   def manage_pelit
