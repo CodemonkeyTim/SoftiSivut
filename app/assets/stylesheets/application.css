@@ -22,3 +22,13 @@ body {
 	background-image: url('neukut.jpg');
 	background-size: cover;
 }
+
+.navbar .nav > li > span#user_greeting {
+  float: left;
+  padding: 9px 10px 11px;
+  line-height: 19px;
+  color: #999999;
+  display: block;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}

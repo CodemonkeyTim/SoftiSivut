@@ -1,0 +1,2 @@
+module ManagersAjaxHelper
+end

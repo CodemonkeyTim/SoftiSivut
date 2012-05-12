@@ -35,7 +35,8 @@
   				<% else %>
   					<li><a href="/">Normisivusto</a></li>
   					<li class="divider-vertical"></li>
-  					<li>Moi <%= current_user.username %>. <span><%= link_to "Kirjaudu ulos", destroy_user_session_path, :method => "delete" %></span></li>
+  					<li><span id="user_greeting">Moi <%= current_user.username %></span></li>
+  					<li><%= link_to "Kirjaudu ulos", destroy_user_session_path, :method => "delete" %></li>
   				<% end %>
 			</ul>
         </div>
