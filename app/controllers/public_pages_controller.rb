@@ -4,7 +4,7 @@ class PublicPagesController < ApplicationController
   end
   
   def pelit
-    
+    @pelit_visible = Peli.all[0..10]
   end
   
   def saannot

@@ -1,9 +1,10 @@
 <div class="row">
-	<div class="span12">
-		<h2>Pelit Mäkelän metikössä</h2>
-		<p>
-			Joo. Pojat, pelaamaan lauvantaina 16.6.2012 Mäkelän metikköön. Omat aseet, kuulat, kaasut, akut, laturit, maskit/suojalasit, BDUt sekä ruumiit mukaan.
-		</p>
-	</div>
-	
+	<% @pelit_visible.each do |peli| %>
+		<div class="span12">
+			<h2><%= peli.time.strftime("%d.%m") %> <%= peli.place %></h2>
+			<p>
+				<%= peli.description %>
+			</p>
+		</div>
+	<% end %>
 </div>

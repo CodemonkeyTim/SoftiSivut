@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  place: MyString
+  time: 2012-06-15 08:11:01
+
+two:
+  place: MyString
+  time: 2012-06-15 08:11:01
