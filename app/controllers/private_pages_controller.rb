@@ -10,8 +10,14 @@ class PrivatePagesController < ApplicationController
   end
 
   def manage_pelit
+    @newest_pelit = Peli.all[0..5]
+  end
+  
+  def edit_peli
+    @peli = Peli.find(params[:id])
     
   end
+  
 
   def manage_galleria
     

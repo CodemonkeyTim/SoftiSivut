@@ -1,7 +1,7 @@
 <div class="row">
 	<% @pelit_visible.each do |peli| %>
 		<div class="span12">
-			<h2><%= peli.time.strftime("%d.%m") %> <%= peli.place %></h2>
+			<h2><%= peli.time.strftime("%d.%m - %H:%M") %> <%= peli.place %></h2>
 			<p>
 				<%= peli.description %>
 			</p>

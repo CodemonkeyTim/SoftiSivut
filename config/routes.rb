@@ -15,13 +15,18 @@ SoftiSivut::Application.routes.draw do
   #privatet
   match "/private_koti" => "private_pages#index"
   match "/muokkaa_uutisia" => "private_pages#manage_uutiset"
-  match "/muokkaa_peleja" => "private_pages#manage_peleja"
+  match "/muokkaa_peleja" => "private_pages#manage_pelit"
   match "/muokkaa_galleriaa" => "private_pages#manage_galleria"
   
-  #ajax calls
+  #Managing Uutinens
   match "/new_uutinen/" => "managers_ajax#new_uutinen"
   match "/edit_uutinen/:id" => "managers_ajax#edit_uutinen", :method => "PUT"
   match "/delete_uutinen/:id" => "managers_ajax#delete_uutinen", :method => "DELETE"
+  
+  
+  #Managing Pelis
+  match "/edit_peli/:id" => "private_pages#edit_peli"
+  
   
   match "/new_peli" => "managers_ajax#new_peli"
   match "/edit_peli/:id" => "managers_ajax#edit_peli", :method => "PUT"

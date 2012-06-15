@@ -1,2 +1,48 @@
-<h1>PrivatePages#manage_pelit</h1>
-<p>Find me in app/views/private_pages/manage_pelit.html.erb</p>
+<div class="container">
+	<h1>Uusimmat pelit</h1>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Aika</th>
+				<th>Paikka</th>
+				<th>Kuvaus</th>
+				<th>Jottain</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<% @newest_pelit.each do |peli| %>
+				<tr>
+					<td><%= peli.time.strftime("%d.%m - %H:%M") %></td>
+					<td><%= peli.place %></td>
+					<td><%= peli.description %></td>
+					<td><a class="btn" href="/edit_peli/<%= peli.id %>">Muokkaa</a></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	
+	<h1>Kaikki kannassa olevat pelit</h1>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Aika</th>
+				<th>Paikka</th>
+				<th>Kuvaus</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<% Peli.all.each do |peli| %>
+				<tr>
+					<td><%= peli.time.strftime("%d.%m") %></td>
+					<td><%= peli.place %></td>
+					<td><%= peli.description %></td>
+					<td><a class="btn" href="/edit_peli/<%= peli.id %>">Muokkaa</a></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
