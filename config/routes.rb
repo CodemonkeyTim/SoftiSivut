@@ -29,7 +29,7 @@ SoftiSivut::Application.routes.draw do
   
   
   match "/new_peli" => "managers_ajax#new_peli"
-  match "/edit_peli/:id" => "managers_ajax#edit_peli", :method => "PUT"
+  match "/save_peli/:id" => "managers_ajax#save_peli", :method => "PUT"
   match "/delete_peli/:id" => "managers_ajax#delete_peli", :method => "DELETE"
   
 end

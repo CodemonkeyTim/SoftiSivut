@@ -26,8 +26,18 @@ class ManagersAjaxController < ApplicationController
   end
   
   
-  def edit_peli
+  def save_peli
+    peli = Peli.find(params[:id])
     
+    peli.place = params[:place]
+    peli.time = params[:time]
+    peli.description = params[:descr]
+    
+    if peli.save
+      render :text => "true"
+    else
+      render :text => "false"
+    end
   end
   
   def delete_peli

@@ -2,15 +2,15 @@
 	<h2>Pelin tiedot</h2>
 	
 	<p> Paikka <br/>
-		<input type="text" value="<%= @peli.place %>" />
+		<input type="text" id="place_input" value="<%= @peli.place %>" />
 	</p>
 	
 	<p> Aika <br/>
-		<input type="text" value="<%= @peli.time %>" />
+		<input type="text" id="time_input" value="<%= @peli.time.strftime("%d.%m.%y %H:%M:%S") %>" />
 	</p>
 	
 	<p> Kuvaus <br/>
-		<textarea rows="6"><%= @peli.description %></textarea>
+		<textarea id="descr_input" rows="6"><%= @peli.description %></textarea>
 	</p>
 	
 	<input class="btn" type="button" value="Tallenna" onclick="save_peli()" />	
@@ -19,7 +19,21 @@
 
 <script>
 	function save_peli() {
-		var paikka
+		var place = $('#place_input').val();
+		var time = $('#time_input').val();
+		var descr = $('#descr_input').val();
+		
+		var url = "/save_peli/<%= @peli.id %>?place="+place+"&time="+time+"&descr="+descr
+		
+		$.ajax({
+			url: url,
+			method: 'put',
+			cache: false,
+			success: function(response) {
+				alert(response);
+			}			
+		});
+		
 		
 	}
 	
